@@ -1,0 +1,13 @@
+{
+  "name": "Orthodontiste",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://app.orthodontistemontreal.ca/"
+    }
+  ]
+}

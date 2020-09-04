@@ -1,0 +1,87 @@
+<!--
+  Generated template for the MyAppointmentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="skin skin-white">
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Mon Rendez-vous</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="white">
+    <div class="white about-v1">
+        <p text-center *ngIf="!hasReadWritePermission">
+            Permission not allowed for add appointment.
+        </p>
+
+        <div padding class="ani-right-to-left" *ngIf="hasReadWritePermission">
+            <div class="form-mess mgt-10 pdb-50 ani-bottom-to-top">
+
+                <h4 class="fs-26 fw-600">
+                    Mon Rendez-vous
+                </h4>
+
+                <ion-list>
+                    <ion-item class="text-grey-5 grey-1 round">
+                        <ion-input type="text" placeholder="Title" [(ngModel)]="title"></ion-input>
+                    </ion-item>
+                </ion-list>
+
+                <ion-list>
+                    <ion-item class="text-grey-5 grey-1 round dropdown">
+                        <ion-select [(ngModel)]="location" placeholder="Select location">
+                            <ion-option value="Dorval">Dorval</ion-option>
+                            <ion-option value="Montréal">Montréal</ion-option>
+                            <ion-option value="St-Leonard">St-Leonard</ion-option>
+                        </ion-select>
+                    </ion-item>
+
+
+                </ion-list>
+
+                <ion-list>
+                    <ion-item class="text-grey-5 grey-1 bdra-15 round">
+                        <ion-datetime placeholder="Start Date" displayFormat="DD-MM-YYYY" pickerFormat="MMMM DDDD YYYY"
+                                      [(ngModel)]="eventDate.start"></ion-datetime>
+                    </ion-item>
+                </ion-list>
+
+                <ion-list>
+                    <ion-item class="text-grey-5 grey-1 bdra-15 round">
+                        <ion-datetime placeholder="Start Time" displayFormat="h:mm A" pickerFormat="h mm A"
+                                      [(ngModel)]="eventTime.start"></ion-datetime>
+                    </ion-item>
+                </ion-list>
+
+                <ion-list>
+                    <ion-item class="text-grey-5 grey-1 bdra-15 round">
+                        <ion-datetime placeholder="End Date" displayFormat="DD-MM-YYYY" pickerFormat="MMMM DDDD YYYY"
+                                      [(ngModel)]="eventDate.end"></ion-datetime>
+                    </ion-item>
+                </ion-list>
+
+                <ion-list>
+                    <ion-item class="text-grey-5 grey-1 bdra-15 round">
+                        <ion-datetime placeholder="End Time" displayFormat="h:mm A" pickerFormat="h mm A"
+                                      [(ngModel)]="eventTime.end"></ion-datetime>
+                    </ion-item>
+                </ion-list>
+
+                <div class="text-right">
+                    <button ion-button round icon-left class="pink text-white mgt-10" (click)="createEvent()">
+                        Add
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</ion-content>
+
+

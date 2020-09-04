@@ -1,0 +1,14 @@
+page-my-appointment {
+  .datetime {
+    padding: 0;
+  }
+
+  .dropdown {
+    ion-select {
+      padding-left: 0 !important;
+      min-width: 100%;
+      padding-right: 16px;
+    }
+  }
+
+}
